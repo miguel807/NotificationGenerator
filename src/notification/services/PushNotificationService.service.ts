@@ -1,12 +1,13 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Logger } from '@nestjs/common';
 import { INotification } from '../interfaces/INotification';
 import {Notification} from '../entities/notification.entity'
 import { CreateNotificationDto } from '../dto/create-notification.dto';
+import { SystemNotificationService } from './systemNotificationService.service';
 
 @Injectable()
 export class PushNotificationService implements INotification {
+  private readonly logger = new Logger(SystemNotificationService.name);
   async sendNotification(notification: CreateNotificationDto): Promise<void> {
-    // Lógica para enviar notificaciones push a dispositivos móviles
-    console.log("se ha enviado una notificacion a un dispositivo movil: "+notification)
+    this.logger.log(`Notification sent successfully by push: ${JSON.stringify(notification)}`);
   }
 }

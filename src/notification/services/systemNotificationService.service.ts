@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable, Logger } from '@nestjs/common';
 import { CreateNotificationDto } from '../dto/create-notification.dto';
 import { Notification } from '../entities/notification.entity';
 import { INotificationRepository } from '../repository/INotificationRepository';
@@ -6,6 +6,7 @@ import { INotificationRepository } from '../repository/INotificationRepository';
 
 @Injectable()
 export class SystemNotificationService {
+
   constructor(
     @Inject('INotificationRepository')
     private  notificationRepository: INotificationRepository,
