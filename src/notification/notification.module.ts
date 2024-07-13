@@ -12,11 +12,12 @@ import { SystemNotificationService } from './services/systemNotificationService.
 import { Notification } from './entities/notification.entity';
 import { NotificationRepository } from './repository/notificationRepository';
 import { NotificationBatchService } from './services/NotificationBatchService.service';
+import { JwtModule } from '@nestjs/jwt';
 
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Notification]),
+    TypeOrmModule.forFeature([Notification]),JwtModule
   ],
   controllers: [NotificationController,SystemNotificationController],
   providers: [NotificationDispatcherService, 
