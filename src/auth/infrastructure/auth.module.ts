@@ -12,7 +12,7 @@ import { UserModule } from 'src/user/infrastructure/user.module';
     ,JwtModule.register({
     secret: "jwt-secret", 
     signOptions:{
-      expiresIn:3600,
+      expiresIn:5600,
     }
   })
   ],

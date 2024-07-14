@@ -33,7 +33,7 @@ export class CreateNotificationDto {
   
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
+  @IsDate()
   createdAt: Date;
   
   @ApiProperty()
