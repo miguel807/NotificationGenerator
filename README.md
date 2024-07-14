@@ -24,7 +24,7 @@
 
 ## Description
 
-Flujo de Notificaciones
+Flujo de Notificaciones <br>
 NotificationBatchService
 Este servicio gestiona las notificaciones por lotes. Se asegura de que las notificaciones similares se agrupen y se envíen juntas. El proceso es el siguiente:
 
