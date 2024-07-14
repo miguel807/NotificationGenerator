@@ -24,7 +24,28 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Flujo de Notificaciones
+NotificationBatchService
+Este servicio gestiona las notificaciones por lotes. Se asegura de que las notificaciones similares se agrupen y se envíen juntas. El proceso es el siguiente:
+
+Recepción de la Notificación: El NotificationBatchService recibe una notificación.
+Validación de Tipo: Si la notificación es de tipo BATCH, se agrupa con otras notificaciones similares.
+Condiciones de Lote:
+Si se alcanza el tamaño máximo del lote (maxBatchSize), se envían todas las notificaciones del lote.
+Si se alcanza el tiempo máximo de espera (maxBatchTime), se envían todas las notificaciones del lote.
+Combinación de Notificaciones: Las notificaciones del lote se combinan en una sola notificación.
+Envío al Dispatcher: La notificación combinada se envía al NotificationDispatcherService.
+NotificationDispatcherService
+Este servicio se encarga de despachar las notificaciones a los canales correspondientes:
+
+Recepción de Notificación: Recibe una notificación del NotificationBatchService.
+Determinación del Canal: Determina el canal de entrega basado en la notificación (por ejemplo, EMAIL, SMS, PUSH).
+Envío a Servicios Específicos: Llama al servicio específico para enviar la notificación:
+EmailNotificationService
+SMSNotificationService
+PushNotificationService
+WhatsAppNotificationService
+SystemNotificationService
 
 ## Installation
 
