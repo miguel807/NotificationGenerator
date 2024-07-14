@@ -25,27 +25,27 @@
 ## Description
 
 Flujo de Notificaciones <br>
-NotificationBatchService
-Este servicio gestiona las notificaciones por lotes. Se asegura de que las notificaciones similares se agrupen y se envíen juntas. El proceso es el siguiente:
+NotificationBatchService<br>
+Este servicio gestiona las notificaciones por lotes. Se asegura de que las notificaciones similares se agrupen y se envíen juntas. El proceso es el siguiente:<br>
 
-Recepción de la Notificación: El NotificationBatchService recibe una notificación.
-Validación de Tipo: Si la notificación es de tipo BATCH, se agrupa con otras notificaciones similares.
-Condiciones de Lote:
-Si se alcanza el tamaño máximo del lote (maxBatchSize), se envían todas las notificaciones del lote.
-Si se alcanza el tiempo máximo de espera (maxBatchTime), se envían todas las notificaciones del lote.
-Combinación de Notificaciones: Las notificaciones del lote se combinan en una sola notificación.
-Envío al Dispatcher: La notificación combinada se envía al NotificationDispatcherService.
-NotificationDispatcherService
-Este servicio se encarga de despachar las notificaciones a los canales correspondientes:
+Recepción de la Notificación: El NotificationBatchService recibe una notificación.<br>
+Validación de Tipo: Si la notificación es de tipo BATCH, se agrupa con otras notificaciones similares.<br>
+Condiciones de Lote:<br>
+Si se alcanza el tamaño máximo del lote (maxBatchSize), se envían todas las notificaciones del lote.<br>
+Si se alcanza el tiempo máximo de espera (maxBatchTime), se envían todas las notificaciones del lote.<br>
+Combinación de Notificaciones: Las notificaciones del lote se combinan en una sola notificación.<br>
+Envío al Dispatcher: La notificación combinada se envía al NotificationDispatcherService.<br>
+NotificationDispatcherService<br>
+Este servicio se encarga de despachar las notificaciones a los canales correspondientes:<br>
 
-Recepción de Notificación: Recibe una notificación del NotificationBatchService.
-Determinación del Canal: Determina el canal de entrega basado en la notificación (por ejemplo, EMAIL, SMS, PUSH).
-Envío a Servicios Específicos: Llama al servicio específico para enviar la notificación:
-EmailNotificationService
-SMSNotificationService
-PushNotificationService
-WhatsAppNotificationService
-SystemNotificationService
+Recepción de Notificación: Recibe una notificación del NotificationBatchService.<br>
+Determinación del Canal: Determina el canal de entrega basado en la notificación (por ejemplo, EMAIL, SMS, PUSH).<br>
+Envío a Servicios Específicos: Llama al servicio específico para enviar la notificación:<br>
+EmailNotificationService<br>
+SMSNotificationService<br>
+PushNotificationService<br>
+WhatsAppNotificationService<br>
+SystemNotificationService<br>
 
 ## Installation
 
