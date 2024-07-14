@@ -19,7 +19,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Post()
-  @ApiOperation({ summary: 'Create a new user' })
+  @ApiOperation({ summary: 'Create a new user, use admin as role' })
   @ApiCreatedResponse({ description: 'The user has been successfully created.' })
   @ApiBadRequestResponse({ description: 'Invalid request.' })
   create(@Body() createUserDto: CreateUserDto) {
